@@ -20,7 +20,7 @@ import org.newdawn.slick.SlickException;
 import org.newdawn.slick.state.StateBasedGame;
 
 
-import wiigee_tutorial.MyWiimoteListener;
+import wiigee.MyWiimoteListener;
 import wiiusej.WiiUseApiManager;
 import wiiusej.Wiimote;
  

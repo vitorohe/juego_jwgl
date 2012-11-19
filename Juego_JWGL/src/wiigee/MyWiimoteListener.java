@@ -1,4 +1,4 @@
-package wiigee_tutorial;
+package wiigee;
 
 
 import org.newdawn.slick.SlickException;
