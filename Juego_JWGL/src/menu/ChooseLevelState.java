@@ -59,20 +59,24 @@ public class ChooseLevelState extends MyBasicGameState{
     	   	
     	level_list = new ArrayList<Image>(); 
     	
-    	level_list.add(new Image("testdata/selected_tutorial_level.png"));
+    	level_list.add(new Image("testdata/etapa_disponible_seleccionada.png"));
     	
     	if(!HungryRunnerGame.isTutorial_played())    	
-    		level_list.add(new Image("testdata/first_level_disabled.png"));
+    		level_list.add(new Image("testdata/etapa_bloqueada.png"));
     	else
-    		level_list.add(new Image("testdata/first_level.png"));
+    		level_list.add(new Image("testdata/etapa_disponible.png"));
     	
-    	level_list.add(new Image("testdata/second_level_disabled.png"));
+    	level_list.add(new Image("testdata/etapa_nodisponible.png"));
     	
-//    	menu_list = new ArrayList<String>();
-//    	menu_list.add("Atrás");
-//
-//    	color_menu_list = new ArrayList<Color>();
-//    	color_menu_list.add(Color.yellow);
+    	menu_list = new ArrayList<String>();
+    	menu_list.add("Tutorial");
+    	menu_list.add("Etapa 1");
+    	menu_list.add("Etapa 2");
+
+    	color_menu_list = new ArrayList<Color>();
+    	color_menu_list.add(Color.yellow);
+    	color_menu_list.add(Color.black);
+    	color_menu_list.add(Color.black);
     	
     	actual_menu = 0;
     	
@@ -110,16 +114,18 @@ public class ChooseLevelState extends MyBasicGameState{
     	g.draw(ground);
     	g.fill(ground);
     	
-    	int d = 50;
+    	int d = 60;
     	
     	for(Image img: level_list){
-    		img.draw(d,150,0.4f);
-    		d +=50+img.getWidth()*0.4f;
+    		img.draw(d,150,0.9f);
+    		d +=50+img.getWidth()*0.9f;
     	}
     	
     	ufont.drawString(HungryRunnerGame.getWidth()/2-110, 30, "Elige el nivel a jugar", Color.blue);
     	
-//    	ufont.drawString(HungryRunnerGame.getWidth()/2-110, 5*HungryRunnerGame.getHeight()/6-100, menu_list.get(0), color_menu_list.get(0));
+    	ufont.drawString(HungryRunnerGame.getWidth()/2-285, HungryRunnerGame.getHeight()-250, menu_list.get(0), color_menu_list.get(0));
+    	ufont.drawString(HungryRunnerGame.getWidth()/2-40, HungryRunnerGame.getHeight()-250, menu_list.get(1), color_menu_list.get(1));
+    	ufont.drawString(HungryRunnerGame.getWidth()/2+205, HungryRunnerGame.getHeight()-250, menu_list.get(2), color_menu_list.get(2));
     	
     }
  

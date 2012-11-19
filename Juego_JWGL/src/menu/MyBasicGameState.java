@@ -82,6 +82,10 @@ public class MyBasicGameState extends BasicGameState {
 			String selected_name = getSelectedName(img2.toString());
 			this.level_list.set(actual_menu, new Image(normal_name));
 			this.level_list.set(actual_menu-1, new Image(selected_name));
+			
+			this.color_menu_list.set(actual_menu, Color.black);
+			this.color_menu_list.set(actual_menu-1, Color.yellow);
+			
 			this.actual_menu--;
 		}		
 		
@@ -97,21 +101,24 @@ public class MyBasicGameState extends BasicGameState {
 			String selected_name = getSelectedName(img2.toString());
 			this.level_list.set(actual_menu, new Image(normal_name));
 			this.level_list.set(actual_menu+1, new Image(selected_name));
+			
+			this.color_menu_list.set(actual_menu, Color.black);
+			this.color_menu_list.set(actual_menu+1, Color.yellow);
+			
 			this.actual_menu++;
 		}
 	}
 
 	private String getSelectedName(String string) {
-
-		int pos1 = string.indexOf("/")+1;
-		int pos2 = string.indexOf("png")+3;		
-		return "testdata/selected_"+string.substring(pos1,pos2);
+		int pos1 = string.indexOf("/");
+		int pos2 = string.indexOf(".png");
+		return "testdata/"+string.substring(pos1,pos2)+"_seleccionada.png";
 	}
 
 	private String getNormalName(String string) {
-		int pos1 = string.indexOf("/selected_")+10;
-		int pos2 = string.indexOf("png")+3;		
-		return "testdata/"+string.substring(pos1,pos2);
+		int pos1 = string.indexOf("/");
+		int pos2 = string.indexOf("_seleccionada.png");	
+		return "testdata/"+string.substring(pos1,pos2)+".png";
 	}
 
 	public void moveJump() {
