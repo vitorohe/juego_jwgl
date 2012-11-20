@@ -145,8 +145,10 @@ public class TutorialSlide extends MyBasicGameState{
 		//seting font
 		setFont();
 		
+		//textos tutorial
 		sprites = new SpriteSheet("testdata/textos_tutorial02.png", 300, 150);
 		instrucciones_tutorial_slide = new Animation(sprites, 2000);
+		instrucciones_tutorial_slide.setLooping(false);
 		
 		
 		sprites = new SpriteSheet("res/running21.png", 100,144);
